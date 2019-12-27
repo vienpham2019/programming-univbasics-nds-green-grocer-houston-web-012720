@@ -87,8 +87,8 @@ def checkout(cart, coupons)
       # some irritated customers
       
   my_cart = consolidate_cart(cart)
-  check_coupons = apply_coupons(my_cart,coupons)
-  after_coupon_and_clearance = apply_clearance(check_coupons,coupons)
+  cart_with_coupons = apply_coupons(my_cart,coupons)
+  after_coupon_and_clearance = apply_clearance(cart_with_coupons)
   total = 0
   after_coupon_and_clearance.each do |grocery|
     total += (grocery[:count].to_f * grocery[:price].round(3))
