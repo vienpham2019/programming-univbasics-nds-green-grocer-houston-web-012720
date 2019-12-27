@@ -93,6 +93,9 @@ def checkout(cart, coupons)
   after_coupon_and_clearance.each do |grocery|
     total += (grocery[:count].to_f * grocery[:price].round(3))
   end
+  if total > 100
+    total *= 0.9
+  end
   total
 end
 
